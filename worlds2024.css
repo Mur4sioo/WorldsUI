@@ -1,108 +1,158 @@
-@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+/*
+Use your custom theme:
+Select "Custom" theme in the dashboard
+On your https://poll.ma.pe/overlay/<id>/ URL add ?customCss=https://example.com/style.css
 
-/* Styl Worlds 2024 - CSS */
+Please keep the link to https://poll.ma.pe visible for a short period of time.
+*/
 
+@import url(https://fonts.googleapis.com/css?family=Abel);
+
+/* Main container customization */
 .custom {
-  background: linear-gradient(135deg, #0b0c34, #1a1e60); /* ciemny niebieski gradient */
-  border: 3px solid #00bfff; /* niebieskie obramowanie */
-  width: 420px;
-  padding: 15px;
-  font-family: 'Abel', sans-serif;
-  color: #fff; /* Biały tekst */
-  box-shadow: 0 0 15px rgba(0, 191, 255, 0.8); /* Błyszczący niebieski efekt */
-  border-radius: 10px;
-  opacity: 1; /* Aby ramka była widoczna */
+	background: #000; /* Background black to fit esports theme */
+	width: 400px;
+	transition: opacity 1s;
+	padding: 10px;
+	border-radius: 10px; /* Rounded corners for a modern look */
+	font-family: Abel;
+	color: #fff; /* White text for contrast */
+	border: 2px solid #00b8ff; /* Cyan-blue border to represent Worlds 2025 */
 }
 
-/* Informacje meta */
+/* Active and finished states */
+.custom.finished,
+.custom.active {
+	opacity: 1;
+}
+
+/* Meta info box (for vote count and time) */
 .custom .metaInfo {
-  background: #001a40;
-  padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  color: #fff;
+	background: #222; /* Dark background for meta info */
+	color: #bbb; /* Light grey text */
+	padding: 0 10px;
+	border-radius: 5px;
+	margin-top: 10px;
 }
 
-/* Sekcja total i czas */
+/* Total votes and duration boxes */
 .custom .total, .custom .duration {
-  background: #0b1f5e;
-  border: 1px solid #00bfff;
-  float: left;
-  width: 48%;
-  text-align: center;
-  padding: 10px;
-  margin: 10px 1% 10px 0;
-  border-radius: 5px;
+	background: #333; /* Slightly lighter than background */
+	color: #00b8ff; /* Use cyan-blue color for accent */
+	float: left;
+	width: 49%;
+	text-align: center;
+	padding: 10px;
+	margin: 10px 0;
+	line-height: 1.3;
+	border-radius: 5px;
+}
+.custom .total strong,
+.custom .duration strong {
+	color: #ffa;
+	font-size: 20px;
+	display: block;
 }
 
-.custom .total strong, .custom .duration strong {
-  color: #00bfff;
-  font-size: 22px;
-  display: block;
-}
-
-/* Ustawienia opcji głosowania */
+/* Vote options list styling */
 .custom .options li {
-  position: relative;
-  background: #11204e; /* Niebieskie tło */
-  padding: 12px;
-  color: #fff;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  border: 1px solid #00bfff;
-  box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
-  font-size: 16px;
-  transition: background 0.3s;
+	position: relative;
+	border: 1px solid #444; /* Subtle border for options */
+	padding: 10px;
+	color: #fff;
+	background: #444; /* Background for each option */
+	font-size: 16px;
+	margin-bottom: 5px;
+	border-radius: 5px; /* Rounded corners for options */
 }
 
 .custom .options li:hover {
-  background: #1e326b; /* Zmiana koloru po najechaniu */
+	background-color: #555; /* Hover effect for interactivity */
 }
 
-/* Wskaźnik głosów */
 .custom .options li .procent {
-  position: absolute;
-  top: 12px;
-  right: 20px;
-  color: #00bfff;
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	color: #00b8ff; /* Blue color for percentage */
+}
+
+.custom .options li .number {
+	padding: 5px 10px;
+	background: #222;
+	position: absolute;
+	top: 5px;
+	left: 10px;
+	border-radius: 3px;
 }
 
 .custom .options li .bar {
-  background: #1a1e60;
-  height: 6px;
-  margin-top: 8px;
-  border-radius: 4px;
+	background: #333;
+	height: 5px;
+	margin-top: 5px;
+	border-radius: 3px;
 }
 
 .custom .options li .bar .bar-inner {
-  background: #00bfff;
-  height: 100%;
-  width: 0;
-  transition: width 1s;
-  border-radius: 4px;
+	background: #00b8ff; /* Blue bar representing vote percentage */
+	height: 100%;
+	width: 0;
+	transition: width 1s;
+	position: relative;
 }
 
-/* Stylizacja numerów opcji */
-.custom .options li .number {
-  padding: 5px 10px;
-  background: #00bfff;
-  color: #000;
-  border-radius: 50%;
-  position: absolute;
-  top: 8px;
-  left: 12px;
-  font-weight: bold;
+/* Question box */
+.custom .options li.question {
+	padding: 10px 20px;
+	white-space: normal;
+	background: #0056b3; /* Dark blue for question background */
+	color: white;
+	clear: both;
+	line-height: 1.3;
+	font-size: 20px;
+	position: relative;
+	border-radius: 5px;
 }
 
-/* Pozycjonowanie ramki */
-.custom.topCenter {
-  top: 20px;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
-/* Ukrywanie informacji o credits */
+/* Credits section */
 .custom .credits {
-  opacity: 0;
-  height: 0;
+	text-align: center;
+	opacity: 1;
+	transition: all 1s;
+	height: 25px;
+	clear: both;
+	overflow: hidden;
+	color: #999;
+	font-size: 12px;
+}
+
+.custom.active .credits,
+.custom.removing .credits {
+	height: 0;
+	opacity: 0;
+}
+
+/* Positioning for the poll */
+.custom.bottomCenter {
+	bottom: 20px;
+	left: 50%;
+	transform: translate(-50%, 0);
+}
+
+/* Optional outer border */
+.custom .border {
+	border: 5px solid #00b8ff; /* Cyan-blue border to emphasize the World Championship style */
+}
+
+/* Adjustments for 'finished' state */
+.custom.finished .options li,
+.custom.removing .options li {
+	opacity: 0.5;
+	transition: all 1s;
+}
+
+.custom.finished .options li.highest,
+.custom.removing .options li.highest {
+	color: #ffa;
+	opacity: 1;
 }
