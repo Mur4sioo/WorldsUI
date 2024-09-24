@@ -42,6 +42,10 @@
 
 .custom .total {
     margin-right: 2%;
+    background-image: url('https://upload.wikimedia.org/wikipedia/en/3/35/League_of_Legends_World_Championship_Trophy.png'); /* Puchar Worlds 2024 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .custom .options li {
@@ -103,21 +107,26 @@
     overflow: hidden;
 }
 
-.custom .total {
-    background-image: url('https://example.com/worlds-trophy.png'); /* Replace with real image */
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-/* Adding a League of Legends champion icon to the first option */
+/* Adding League of Legends champion icons */
 .custom .options li:nth-child(1)::before {
     content: '';
     position: absolute;
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
-    background-image: url('https://example.com/champion-icon.png'); /* Replace with real image */
+    background-image: url('https://static.wikia.nocookie.net/leagueoflegends/images/c/c5/Ashe_OriginalSkin.png/revision/latest?cb=20200930150751'); /* Ikona Ashe */
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+}
+
+.custom .options li:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url('https://static.wikia.nocookie.net/leagueoflegends/images/e/ea/Zed_OriginalSkin.png/revision/latest?cb=20200930151013'); /* Ikona Zeda */
     background-size: cover;
     width: 30px;
     height: 30px;
