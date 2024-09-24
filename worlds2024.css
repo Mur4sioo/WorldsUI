@@ -6,16 +6,12 @@
   background: linear-gradient(135deg, #0b0c34, #1a1e60); /* ciemny niebieski gradient */
   border: 3px solid #00bfff; /* niebieskie obramowanie */
   width: 420px;
-  transition: opacity 1s;
   padding: 15px;
   font-family: 'Abel', sans-serif;
   color: #fff; /* Biały tekst */
   box-shadow: 0 0 15px rgba(0, 191, 255, 0.8); /* Błyszczący niebieski efekt */
-}
-
-/* Aktywacja ramki */
-.custom.finished, .custom.active {
-  opacity: 1;
+  border-radius: 10px;
+  opacity: 1; /* Aby ramka była widoczna */
 }
 
 /* Informacje meta */
@@ -24,6 +20,7 @@
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 10px;
+  color: #fff;
 }
 
 /* Sekcja total i czas */
@@ -60,17 +57,6 @@
 
 .custom .options li:hover {
   background: #1e326b; /* Zmiana koloru po najechaniu */
-}
-
-/* Puchar Worlds na górze */
-.custom .trophy {
-  background: url('https://upload.wikimedia.org/wikipedia/en/f/f0/League_of_Legends_World_Championship_2020_logo.png'); /* Przykładowa ikona Pucharu Worlds */
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 60px;
-  width: 60px;
-  margin: 0 auto;
-  margin-bottom: 15px;
 }
 
 /* Wskaźnik głosów */
