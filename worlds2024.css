@@ -58,7 +58,7 @@ Please keep the link to https://poll.ma.pe visible for a short period of time.
 .custom .options li {
 	position: relative;
 	border: 1px solid #444; /* Subtle border for options */
-	padding: 10px;
+	padding: 30px;
 	color: #fff;
 	background: #444; /* Background for each option */
 	font-size: 16px;
