@@ -4,14 +4,17 @@
 * "custom" refers to the theme assigned to the poll element
 */
 .custom {
-    background: #1a1a1a; /* Dark background for a more immersive feel */
+    background: #0e1e32; /* Dark navy background for a more immersive feel */
     width: 400px;
-    transition: opacity 1s;
-    padding: 20px; /* Increased padding for better spacing */
+    transition: opacity 1s ease-in-out;
+    padding: 20px; /* Padding for better spacing */
     font-family: 'Abel', sans-serif; /* Font style */
 
     /* Hide when not active */
     opacity: 0;
+    border: 2px solid #1f2833; /* Slightly lighter border */
+    border-radius: 10px; /* Rounded corners for a polished look */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
 }
 
 .custom.finished,
@@ -20,23 +23,26 @@
 }
 
 .custom .metaInfo {
-    background: #ffcc00; /* Gold-like color, representing prestige */
+    background: #ffcc00; /* Gold-like color for prestige */
     overflow: hidden;
-    padding: 10px; /* Added padding for better appearance */
-    border-radius: 5px; /* Rounded corners for a modern look */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners for the meta info */
+    text-align: center; /* Centered text */
+    font-weight: bold; /* Emphasized text */
 }
 
 .custom .total,
 .custom .duration {
-    background: #333; /* Darker background for statistics sections */
+    background: #4a4a4a; /* Darker grey for stats sections */
     float: left;
     width: 49%;
     text-align: center;
-    padding: 15px; /* Increased padding for better spacing */
+    padding: 15px;
     margin: 10px 0;
     line-height: 1.3;
     border-radius: 5px; /* Rounded corners */
 }
+
 .custom .total strong,
 .custom .duration strong {
     color: #ffa; /* Bright color for emphasis */
@@ -50,8 +56,8 @@
 
 .custom.finished .options li,
 .custom.removing .options li {
-    opacity: 0.3; /* Fading effect for inactive options */
-    transition: all 1s;
+    opacity: 0.5; /* Fading effect for inactive options */
+    transition: all 1s ease; /* Smooth transition */
 }
 
 .custom.finished .options li.highest,
@@ -67,7 +73,7 @@
 
 .custom.finished .metaInfo,
 .custom.removing .metaInfo {
-    opacity: 0.3; /* Dimmed when finished */
+    opacity: 0.5; /* Dimmed when finished */
 }
 
 .custom.active .options li.help {
@@ -76,22 +82,23 @@
 
 .custom .options li {
     position: relative;
-    border: 1px solid #444; /* Border for options */
+    border: 1px solid #555; /* Dark border for options */
     padding: 15px; /* Increased padding */
     color: #fff; /* Text color */
-    text-overflow: ellipsis;
-    background: #2a2a2a; /* Darker background for options */
-    padding-right: 55px;
-    padding-left: 55px;
-    font-size: 16px; /* Increased font size for readability */
+    background: #1f2833; /* Darker background for options */
     border-radius: 5px; /* Rounded corners */
     margin-bottom: 10px; /* Spacing between options */
+    transition: background 0.3s; /* Smooth background transition */
+}
+
+.custom .options li:hover {
+    background: #2d3748; /* Darker background on hover */
 }
 
 .custom .options li.question {
     padding: 15px 20px; /* Padding for question */
     white-space: normal;
-    background: #0057e7; /* Blue color, representing League of Legends */
+    background: linear-gradient(90deg, #0057e7, #0041a3); /* Gradient for question */
     clear: both;
     line-height: 1.3;
     font-size: 20px; /* Font size for question */
@@ -100,7 +107,7 @@
 }
 
 .custom .options li.help {
-    background: #b5651d; /* Brown help text color */
+    background: #b5651d; /* Help text color */
     text-align: center;
     overflow: hidden;
     height: 0; /* Initially hide */
@@ -126,7 +133,7 @@
 }
 
 .custom .options li .bar {
-    background: #444; /* Background for bar */
+    background: #444; /* Background for the bar */
     height: 5px; /* Height of bar */
     margin-top: 5px; /* Margin for bar */
 }
@@ -135,7 +142,7 @@
     background: #ffcc00; /* Inner bar color */
     height: 100%;
     width: 0; /* Start at 0 width */
-    transition: width 1s; /* Smooth transition for width */
+    transition: width 1s ease; /* Smooth transition for width */
     position: relative;
 }
 
