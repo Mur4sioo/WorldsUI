@@ -11,7 +11,11 @@
   color: #fff; /* Biały tekst */
   box-shadow: 0 0 15px rgba(0, 191, 255, 0.8); /* Błyszczący niebieski efekt */
   border-radius: 10px;
-  opacity: 1; /* Aby ramka była widoczna */
+  opacity: 0; /* Aby ramka była widoczna */
+}
+.custom.finished,
+.custom.active {
+	opacity: 1;
 }
 
 /* Informacje meta */
@@ -21,6 +25,8 @@
   border-radius: 10px;
   margin-bottom: 10px;
   color: #fff;
+  opacity: 0;
+  height: 0;
 }
 
 /* Sekcja total i czas */
@@ -48,6 +54,7 @@
   padding: 12px;
   color: #fff;
   margin-bottom: 10px;
+  margin-left: 50px;
   border-radius: 8px;
   border: 1px solid #00bfff;
   box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
