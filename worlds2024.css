@@ -1,113 +1,189 @@
-@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Abel);
 
-/* Styl Worlds 2024 - CSS */
-
+/*
+* "custom" refers to the theme assigned to the poll element
+*/
 .custom {
-  background: linear-gradient(135deg, #0b0c34, #1a1e60); /* ciemny niebieski gradient */
-  border: 3px solid #00bfff; /* niebieskie obramowanie */
-  width: 420px;
-  padding: 15px;
-  font-family: 'Abel', sans-serif;
-  color: #fff; /* Biały tekst */
-  box-shadow: 0 0 15px rgba(0, 191, 255, 0.8); /* Błyszczący niebieski efekt */
-  border-radius: 10px;
-  opacity: 1; /* Aby ramka była widoczna */
+    background: #1a1a1a; /* Dark background for a more immersive feel */
+    width: 400px;
+    transition: opacity 1s;
+    padding: 20px; /* Increased padding for better spacing */
+    font-family: 'Abel', sans-serif; /* Font style */
+
+    /* Hide when not active */
+    opacity: 0;
 }
 
-/* Informacje meta */
+.custom.finished,
+.custom.active {
+    opacity: 1; /* Fade in when active or finished */
+}
+
 .custom .metaInfo {
-  background: #001a40;
-  padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  color: #fff;
+    background: #ffcc00; /* Gold-like color, representing prestige */
+    overflow: hidden;
+    padding: 10px; /* Added padding for better appearance */
+    border-radius: 5px; /* Rounded corners for a modern look */
 }
 
-/* Sekcja total i czas */
-.custom .total, .custom .duration {
-  background: #0b1f5e;
-  border: 1px solid #00bfff;
-  float: left;
-  width: 48%;
-  text-align: center;
-  padding: 10px;
-  margin: 10px 1% 10px 0;
-  border-radius: 5px;
+.custom .total,
+.custom .duration {
+    background: #333; /* Darker background for statistics sections */
+    float: left;
+    width: 49%;
+    text-align: center;
+    padding: 15px; /* Increased padding for better spacing */
+    margin: 10px 0;
+    line-height: 1.3;
+    border-radius: 5px; /* Rounded corners */
+}
+.custom .total strong,
+.custom .duration strong {
+    color: #ffa; /* Bright color for emphasis */
+    font-size: 22px; /* Increased font size for visibility */
+    display: block;
 }
 
-.custom .total strong, .custom .duration strong {
-  color: #00bfff;
-  font-size: 22px;
-  display: block;
+.custom .total {
+    margin-right: 2%; /* Spacing between total and duration */
 }
 
-/* Ustawienia opcji głosowania */
-.custom .options {
-  position: relative; /* Ensure relative positioning for children */
-  z-index: 1; /* Ensure options are above images */
+.custom.finished .options li,
+.custom.removing .options li {
+    opacity: 0.3; /* Fading effect for inactive options */
+    transition: all 1s;
+}
+
+.custom.finished .options li.highest,
+.custom.removing .options li.highest {
+    color: #ffcc00; /* Gold color for the highest voted option */
+    opacity: 1; /* Ensure visibility */
+}
+
+.custom.finished .options li.help,
+.custom.removing .options li.help {
+    height: 0; /* Hiding help text */
+}
+
+.custom.finished .metaInfo,
+.custom.removing .metaInfo {
+    opacity: 0.3; /* Dimmed when finished */
+}
+
+.custom.active .options li.help {
+    height: 35px; /* Show help text when active */
 }
 
 .custom .options li {
-  display: flex; /* Use flexbox for layout */
-  align-items: center; /* Center items vertically */
-  background: #11204e; /* Niebieskie tło */
-  padding: 12px;
-  color: #fff; /* White text */
-  margin-bottom: 10px;
-  border-radius: 8px;
-  border: 1px solid #00bfff;
-  box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
-  font-size: 16px;
-  transition: background 0.3s;
-  z-index: 2; /* Ensure options are above any images */
+    position: relative;
+    border: 1px solid #444; /* Border for options */
+    padding: 15px; /* Increased padding */
+    color: #fff; /* Text color */
+    text-overflow: ellipsis;
+    background: #2a2a2a; /* Darker background for options */
+    padding-right: 55px;
+    padding-left: 55px;
+    font-size: 16px; /* Increased font size for readability */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 10px; /* Spacing between options */
 }
 
-.custom .options li:hover {
-  background: #1e326b; /* Zmiana koloru po najechaniu */
+.custom .options li.question {
+    padding: 15px 20px; /* Padding for question */
+    white-space: normal;
+    background: #0057e7; /* Blue color, representing League of Legends */
+    clear: both;
+    line-height: 1.3;
+    font-size: 20px; /* Font size for question */
+    position: relative;
+    border-radius: 5px; /* Rounded corners */
 }
 
-/* Wskaźnik głosów */
+.custom .options li.help {
+    background: #b5651d; /* Brown help text color */
+    text-align: center;
+    overflow: hidden;
+    height: 0; /* Initially hide */
+}
+
+.custom .options li.help span {
+    display: block;
+    padding: 10px; /* Padding for help text */
+}
+
 .custom .options li .procent {
-  position: absolute;
-  top: 12px;
-  right: 20px;
-  color: #00bfff;
+    position: absolute;
+    top: 10px;
+    right: 15px; /* Position of percentage */
+}
+
+.custom .options li .number {
+    padding: 5px 10px;
+    background: #444; /* Dark background for number */
+    position: absolute;
+    top: 5px;
+    left: 10px; /* Position of number */
 }
 
 .custom .options li .bar {
-  background: #1a1e60;
-  height: 6px;
-  margin-top: 8px;
-  border-radius: 4px;
+    background: #444; /* Background for bar */
+    height: 5px; /* Height of bar */
+    margin-top: 5px; /* Margin for bar */
 }
 
 .custom .options li .bar .bar-inner {
-  background: #00bfff;
-  height: 100%;
-  width: 0;
-  transition: width 1s;
-  border-radius: 4px;
+    background: #ffcc00; /* Inner bar color */
+    height: 100%;
+    width: 0; /* Start at 0 width */
+    transition: width 1s; /* Smooth transition for width */
+    position: relative;
 }
 
-/* Stylizacja numerów opcji */
-.custom .options li .number {
-  padding: 5px 10px;
-  background: #00bfff;
-  color: #000; /* Black text for better contrast */
-  border-radius: 50%;
-  margin-left: auto; /* Push number to the right */
-  font-weight: bold;
+.custom .options li .text {
+    line-height: 1.3; /* Line height for text */
 }
 
-/* Pozycjonowanie ramki */
+/*
+* Positioning
+*/
+.custom.topLeft {
+    top: 20px;
+    left: 20px;
+}
 .custom.topCenter {
-  top: 20px;
-  left: 50%;
-  transform: translate(-50%, 0);
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
-
-/* Ukrywanie informacji o credits */
-.custom .credits {
-  opacity: 0;
-  height: 0;
+.custom.topRight {
+    top: 20px;
+    right: 20px;
+}
+.custom.middleLeft {
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 20px;
+}
+.custom.middleCenter {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+}
+.custom.middleRight {
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 20px;
+}
+.custom.bottomLeft {
+    bottom: 20px;
+    left: 20px;
+}
+.custom.bottomCenter {
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+.custom.bottomRight {
+    bottom: 20px;
+    right: 20px;
 }
