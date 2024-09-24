@@ -50,7 +50,7 @@
 .custom .options li {
   position: relative;
   background: #11204e; /* Niebieskie tło */
-  padding: 12px;
+  padding: 12px 30px 12px 40px; /* Increased padding on the left */
   color: #fff; /* White text */
   margin-bottom: 10px;
   border-radius: 8px;
@@ -98,7 +98,7 @@
   top: 8px;
   left: 12px;
   font-weight: bold;
-  z-index: 3; /* Ensure the number is above everything */
+  z-index: 0; /* Ensure the number is behind the text */
 }
 
 /* Pozycjonowanie ramki */
