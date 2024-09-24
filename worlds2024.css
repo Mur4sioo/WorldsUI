@@ -6,7 +6,7 @@
   background: linear-gradient(135deg, #0b0c34, #1a1e60); /* ciemny niebieski gradient */
   border: 3px solid #00bfff; /* niebieskie obramowanie */
   width: 420px;
-  padding: 7px;
+  padding: 15px;
   font-family: 'Abel', sans-serif;
   color: #fff; /* Biały tekst */
   box-shadow: 0 0 15px rgba(0, 191, 255, 0.8); /* Błyszczący niebieski efekt */
@@ -51,7 +51,7 @@
 .custom .options li {
   position: relative;
   background: #11204e; /* Niebieskie tło */
-  padding: 12px 12px 12px 50px;
+  padding: 12px;
   color: #fff;
   margin-bottom: 10px;
   margin-left: 50px;
