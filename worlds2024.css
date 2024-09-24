@@ -51,7 +51,7 @@
   position: relative;
   background: #11204e; /* Niebieskie tło */
   padding: 12px;
-  color: #fff;
+  color: #fff; /* White text */
   margin-bottom: 10px;
   border-radius: 8px;
   border: 1px solid #00bfff;
@@ -92,7 +92,7 @@
 .custom .options li .number {
   padding: 5px 10px;
   background: #00bfff;
-  color: #000;
+  color: #000; /* Black text for better contrast */
   border-radius: 50%;
   position: absolute;
   top: 8px;
