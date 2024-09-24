@@ -102,13 +102,6 @@
   font-weight: bold;
 }
 
-/* Pozycjonowanie ramki */
-.custom.topCenter {
-  top: 20px;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
 /* Ukrywanie informacji o credits */
 .custom .credits {
   opacity: 0;
