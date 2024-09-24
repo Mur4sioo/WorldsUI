@@ -51,7 +51,7 @@
 .custom .options li {
   position: relative;
   background: #11204e; /* Niebieskie tło */
-  padding: 12px;
+  padding: 12px 12px 12px 50px;
   color: #fff;
   margin-bottom: 10px;
   margin-left: 50px;
