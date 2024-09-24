@@ -1,155 +1,122 @@
-/*
-Use your custom theme:
-Select "Custom" theme in the dashboard
-On your https://poll.ma.pe/overlay/<id>/ URL add ?customCss=https://example.com/style.css
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
-Please keep the link to https://poll.ma.pe visible for a short period of time.
-*/
+/* Styl Worlds 2024 - CSS */
 
-@import url(https://fonts.googleapis.com/css?family=Abel);
-
-/*
-* "custom" refers to the theme assigned to the poll element
-*/
 .custom {
-	background: linear-gradient(135deg, #0d1b2a, #1b263b); /* Gradient Worlds */
-	width: 400px;
-	transition: opacity 1s;
-	padding: 10px;
-	border-radius: 10px; /* Zaokrąglone rogi dla nowoczesnego wyglądu */
-
-	font-family: Abel, sans-serif;
-
-	/* Hide when not active */
-	opacity: 0;
-	border: 2px solid #a8891b; /* Złota ramka nawiązująca do Worlds */
+  background: linear-gradient(135deg, #0b0c34, #1a1e60); /* ciemny niebieski gradient */
+  border: 3px solid #00bfff; /* niebieskie obramowanie */
+  width: 420px;
+  transition: opacity 1s;
+  padding: 15px;
+  font-family: 'Abel', sans-serif;
+  color: #fff; /* Biały tekst */
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.8); /* Błyszczący niebieski efekt */
 }
 
-.custom.finished,
-.custom.active {
-	opacity: 1;
+/* Aktywacja ramki */
+.custom.finished, .custom.active {
+  opacity: 1;
 }
 
-/* Meta informacje: total votes i czas */
+/* Informacje meta */
 .custom .metaInfo {
-	background: #1b263b;
-	overflow: hidden;
-	padding: 10px;
-	border-radius: 8px;
-}
-.custom .total, .custom .duration {
-	background: #2b3a50;
-	color: #e5c07b; /* Złoty tekst */
-	float: left;
-	width: 49%;
-	text-align: center;
-	padding: 10px;
-	margin: 10px 0;
-	line-height: 1.3;
-	border-radius: 5px;
-}
-.custom .total strong,
-.custom .duration strong {
-	color: #f1fa8c; /* Jasne złote litery */
-	font-size: 20px;
-	display: block;
-}
-.custom .total {
-	margin-right: 2%;
-}
-.custom.finished .options li,
-.custom.removing .options li {
-	opacity: 0.3;
-	transition: all 1s;
-}
-.custom.finished .options li.highest,
-.custom.removing .options li.highest {
-	color: #f1fa8c; /* Jasne złote dla najczęściej wybieranej opcji */
-	opacity: 1;
+  background: #001a40;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
-/* Opcje głosowania */
+/* Sekcja total i czas */
+.custom .total, .custom .duration {
+  background: #0b1f5e;
+  border: 1px solid #00bfff;
+  float: left;
+  width: 48%;
+  text-align: center;
+  padding: 10px;
+  margin: 10px 1% 10px 0;
+  border-radius: 5px;
+}
+
+.custom .total strong, .custom .duration strong {
+  color: #00bfff;
+  font-size: 22px;
+  display: block;
+}
+
+/* Ustawienia opcji głosowania */
 .custom .options li {
-	position: relative;
-	border: 2px solid #1f4e5f;
-	padding: 10px;
-	color: #fff;
-	text-overflow: ellipsis;
-	background: #2b3a50;
-	padding-right: 55px;
-	padding-left: 55px;
-	font-size: 16px;
-	border-radius: 5px; /* Zaokrąglone opcje */
-	transition: background 0.3s ease;
+  position: relative;
+  background: #11204e; /* Niebieskie tło */
+  padding: 12px;
+  color: #fff;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #00bfff;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+  font-size: 16px;
+  transition: background 0.3s;
 }
 
 .custom .options li:hover {
-	background: #324863; /* Hover: lekki rozświetlony niebieski */
+  background: #1e326b; /* Zmiana koloru po najechaniu */
 }
 
-.custom .options li.question {
-	padding: 10px 20px;
-	white-space: normal;
-	background: #1f4e5f; /* Niebiesko-fioletowe tło dla pytania */
-	color: #f1fa8c; /* Złoty kolor dla pytania */
-	clear: both;
-	line-height: 1.3;
-	font-size: 20px;
-	font-weight: bold;
-	text-align: center;
-	border-radius: 5px;
+/* Puchar Worlds na górze */
+.custom .trophy {
+  background: url('https://upload.wikimedia.org/wikipedia/en/f/f0/League_of_Legends_World_Championship_2020_logo.png'); /* Przykładowa ikona Pucharu Worlds */
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 60px;
+  width: 60px;
+  margin: 0 auto;
+  margin-bottom: 15px;
 }
 
-/* Styl dla liczby głosów (procenty) */
+/* Wskaźnik głosów */
 .custom .options li .procent {
-	position: absolute;
-	top: 10px;
-	right: 20px;
-	color: #f1fa8c; /* Jasnozłoty dla wartości procentowych */
-	font-size: 16px;
-	font-weight: bold;
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  color: #00bfff;
 }
 
-/* Numer opcji */
-.custom .options li .number {
-	padding: 5px 10px;
-	background: #1b263b;
-	color: #fff;
-	position: absolute;
-	top: 5px;
-	left: 20px;
-	border-radius: 5px;
-}
-
-/* Pasek postępu głosowania */
 .custom .options li .bar {
-	background: #324863;
-	height: 5px;
-	margin-top: 5px;
-	border-radius: 5px;
+  background: #1a1e60;
+  height: 6px;
+  margin-top: 8px;
+  border-radius: 4px;
 }
 
 .custom .options li .bar .bar-inner {
-	background: #f1fa8c; /* Złoty pasek dla głosowania */
-	height: 100%;
-	width: 0;
-	transition: width 1s ease-in-out;
-	position: relative;
+  background: #00bfff;
+  height: 100%;
+  width: 0;
+  transition: width 1s;
+  border-radius: 4px;
 }
 
-/* Credits */
+/* Stylizacja numerów opcji */
+.custom .options li .number {
+  padding: 5px 10px;
+  background: #00bfff;
+  color: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  font-weight: bold;
+}
+
+/* Pozycjonowanie ramki */
+.custom.topCenter {
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+/* Ukrywanie informacji o credits */
 .custom .credits {
-	text-align: center;
-	color: #999;
-	font-size: 12px;
-	margin-top: 10px;
-	opacity: 0.8;
-}
-
-/* Pozycjonowanie - na dole i wycentrowane */
-.custom.bottomCenter {
-	position: absolute;
-	bottom: 20px;
-	left: 50%;
-	transform: translateX(-50%);
+  opacity: 0;
+  height: 0;
 }
