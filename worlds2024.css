@@ -1,108 +1,132 @@
-@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
-
-/* Styl Worlds 2024 - CSS */
+@import url(https://fonts.googleapis.com/css?family=Abel);
 
 .custom {
-  background: linear-gradient(135deg, #0b0c34, #1a1e60); /* ciemny niebieski gradient */
-  border: 3px solid #00bfff; /* niebieskie obramowanie */
-  width: 420px;
-  padding: 15px;
-  font-family: 'Abel', sans-serif;
-  color: #fff; /* Biały tekst */
-  box-shadow: 0 0 15px rgba(0, 191, 255, 0.8); /* Błyszczący niebieski efekt */
-  border-radius: 10px;
-  opacity: 1; /* Aby ramka była widoczna */
+    background: #000;
+    width: 400px;
+    transition: opacity 1s;
+    padding: 10px;
+    font-family: Abel;
+    opacity: 0;
+    border-radius: 10px;
+    border: 3px solid #00ffff; /* Cyan border */
 }
 
-/* Informacje meta */
+.custom.finished,
+.custom.active {
+    opacity: 1;
+}
+
 .custom .metaInfo {
-  background: #001a40;
-  padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  color: #fff;
+    background: green;
+    overflow: hidden;
+    padding: 0 10px;
 }
 
-/* Sekcja total i czas */
 .custom .total, .custom .duration {
-  background: #0b1f5e;
-  border: 1px solid #00bfff;
-  float: left;
-  width: 48%;
-  text-align: center;
-  padding: 10px;
-  margin: 10px 1% 10px 0;
-  border-radius: 5px;
+    background: #222;
+    float: left;
+    width: 49%;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 0;
+    line-height: 1.3;
+    color: #00ffff; /* Cyan text */
 }
 
-.custom .total strong, .custom .duration strong {
-  color: #00bfff;
-  font-size: 22px;
-  display: block;
+.custom .total strong,
+.custom .duration strong {
+    color: #00ffff;
+    font-size: 20px;
+    display: block;
 }
 
-/* Ustawienia opcji głosowania */
+.custom .total {
+    margin-right: 2%;
+}
+
 .custom .options li {
-  position: relative;
-  background: #11204e; /* Niebieskie tło */
-  padding: 12px;
-  color: #fff;
-  margin-bottom: 10px;
-  border-radius: 8px;
-  border: 1px solid #00bfff;
-  box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
-  font-size: 16px;
-  transition: background 0.3s;
+    position: relative;
+    padding: 10px;
+    color: #fff;
+    text-overflow: ellipsis;
+    background: rgba(0, 0, 255, 0.3); /* Slight blue background */
+    padding-right: 55px;
+    padding-left: 55px;
+    font-size: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.custom .options li:hover {
-  background: #1e326b; /* Zmiana koloru po najechaniu */
-}
-
-/* Wskaźnik głosów */
 .custom .options li .procent {
-  position: absolute;
-  top: 12px;
-  right: 20px;
-  color: #00bfff;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #00ffff;
+}
+
+.custom .options li .number {
+    padding: 5px 10px;
+    background: #333;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    color: #00ffff;
 }
 
 .custom .options li .bar {
-  background: #1a1e60;
-  height: 6px;
-  margin-top: 8px;
-  border-radius: 4px;
+    background: #444;
+    height: 5px;
+    margin-top: 5px;
 }
 
 .custom .options li .bar .bar-inner {
-  background: #00bfff;
-  height: 100%;
-  width: 0;
-  transition: width 1s;
-  border-radius: 4px;
+    background: #00ffff;
+    height: 100%;
+    width: 0;
+    transition: width 1s;
+    position: relative;
 }
 
-/* Stylizacja numerów opcji */
-.custom .options li .number {
-  padding: 5px 10px;
-  background: #00bfff;
-  color: #000;
-  border-radius: 50%;
-  position: absolute;
-  top: 8px;
-  left: 12px;
-  font-weight: bold;
+.custom .options li .text {
+    line-height: 1.3;
+    font-size: 16px;
 }
 
-/* Pozycjonowanie ramki */
-.custom.topCenter {
-  top: 20px;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
-/* Ukrywanie informacji o credits */
 .custom .credits {
-  opacity: 0;
-  height: 0;
+    text-align: center;
+    opacity: 1;
+    height: 25px;
+    clear: both;
+    overflow: hidden;
+}
+
+.custom .total {
+    background-image: url('https://example.com/worlds-trophy.png'); /* Replace with real image */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Adding a League of Legends champion icon to the first option */
+.custom .options li:nth-child(1)::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url('https://example.com/champion-icon.png'); /* Replace with real image */
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+}
+
+/* Center the poll UI */
+.custom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
