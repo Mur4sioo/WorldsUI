@@ -1,220 +1,108 @@
-@import url(https://fonts.googleapis.com/css?family=Abel);
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
-/*
-* "custom" refers to the theme assigned to the poll element
-*/
+/* Styl Worlds 2024 - CSS */
+
 .custom {
-    background: #000;
-    width: 400px;
-    transition: opacity 1s;
-    padding: 10px;
-    font-family: Abel;
-    opacity: 0; /* Hide when not active */
-    border: 5px solid transparent; /* Transparent border for image */
-    background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/3/35/League_of_Legends_World_Championship_Trophy.png/220px-League_of_Legends_World_Championship_Trophy.png'); /* Puchar Worlds 2024 */
-    background-size: cover; /* Cover to fill the div */
-    background-position: center; /* Center the image */
+  background: linear-gradient(135deg, #0b0c34, #1a1e60); /* ciemny niebieski gradient */
+  border: 3px solid #00bfff; /* niebieskie obramowanie */
+  width: 420px;
+  padding: 15px;
+  font-family: 'Abel', sans-serif;
+  color: #fff; /* Biały tekst */
+  box-shadow: 0 0 15px rgba(0, 191, 255, 0.8); /* Błyszczący niebieski efekt */
+  border-radius: 10px;
+  opacity: 1; /* Aby ramka była widoczna */
 }
 
-.custom.finished,
-.custom.active {
-    opacity: 1;
-}
-
+/* Informacje meta */
 .custom .metaInfo {
-    background: green;
-    overflow: hidden;
-    padding: 0 10px;
+  background: #001a40;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: #fff;
 }
 
+/* Sekcja total i czas */
 .custom .total, .custom .duration {
-    background: rgba(68, 68, 68, 0.8); /* Darker background with some transparency */
-    float: left;
-    width: 49%;
-    text-align: center;
-    padding: 10px;
-    margin: 10px 0;
-    line-height: 1.3;
+  background: #0b1f5e;
+  border: 1px solid #00bfff;
+  float: left;
+  width: 48%;
+  text-align: center;
+  padding: 10px;
+  margin: 10px 1% 10px 0;
+  border-radius: 5px;
 }
 
-.custom .total strong,
-.custom .duration strong {
-    color: #ffa; /* Light yellow text */
-    font-size: 20px;
-    display: block;
+.custom .total strong, .custom .duration strong {
+  color: #00bfff;
+  font-size: 22px;
+  display: block;
 }
 
-.custom .total {
-    margin-right: 2%;
-}
-
-.custom.finished .options li,
-.custom.removing .options li {
-    opacity: 0.3;
-    transition: all 1s;
-}
-
-.custom.finished .options li.highest,
-.custom.removing .options li.highest {
-    color: #ffa; /* Highlighted option color */
-    opacity: 1;
-}
-
-.custom.finished .options li.help,
-.custom.removing .options li.help {
-    height: 0;
-}
-
-.custom.finished .metaInfo,
-.custom.removing .metaInfo {
-    opacity: 0.3;
-}
-
-.custom.active .options li.help {
-    height: 35px;
-}
-
+/* Ustawienia opcji głosowania */
 .custom .options li {
-    position: relative;
-    border: 1px solid #00ffff; /* Cyan border */
-    padding: 10px;
-    color: #fff;
-    text-overflow: ellipsis;
-    background: rgba(136, 136, 136, 0.8); /* Slightly transparent background */
-    padding-right: 55px;
-    padding-left: 55px;
-    font-size: 15px;
+  position: relative;
+  background: #11204e; /* Niebieskie tło */
+  padding: 12px;
+  color: #fff;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #00bfff;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+  font-size: 16px;
+  transition: background 0.3s;
 }
 
-.custom .options li.question {
-    padding: 10px 20px;
-    white-space: normal;
-    background: blue;
-    clear: both;
-    line-height: 1.3;
-    font-size: 20px;
-    position: relative;
+.custom .options li:hover {
+  background: #1e326b; /* Zmiana koloru po najechaniu */
 }
 
-.custom .options li.help {
-    background: brown;
-    text-align: center;
-    overflow: hidden;
-    height: 0;
-}
-
-.custom .options li.help span {
-    display: block;
-    padding: 10px;
-}
-
+/* Wskaźnik głosów */
 .custom .options li .procent {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-}
-
-.custom .options li .number {
-    padding: 5px 10px;
-    background: #333;
-    position: absolute;
-    top: 5px;
-    left: 10px;
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  color: #00bfff;
 }
 
 .custom .options li .bar {
-    background: #444;
-    height: 5px;
-    margin-top: 5px;
+  background: #1a1e60;
+  height: 6px;
+  margin-top: 8px;
+  border-radius: 4px;
 }
 
 .custom .options li .bar .bar-inner {
-    background: #fff;
-    height: 100%;
-    width: 0;
-    transition: width 1s;
-    position: relative;
+  background: #00bfff;
+  height: 100%;
+  width: 0;
+  transition: width 1s;
+  border-radius: 4px;
 }
 
-.custom .options li .text {
-    line-height: 1.3;
+/* Stylizacja numerów opcji */
+.custom .options li .number {
+  padding: 5px 10px;
+  background: #00bfff;
+  color: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  font-weight: bold;
 }
 
-/*
-* Optional outer border
-*/
-.custom .border {
-    border: 5px solid red;
-}
-
-.custom .credits {
-    opacity: 0;
-    height: 0;
-}
-
-.custom .credits {
-    text-align: center;
-    opacity: 1;
-    transition: all 1s;
-    height: 25px;
-    clear: both;
-    overflow: hidden;
-}
-
-.custom.active .credits, .custom.removing .credits {
-    height: 0;
-    opacity: 0;
-}
-
-/*
-* Positioning
-*/
-.custom.topLeft {
-    top: 20px;
-    left: 20px;
-}
-
+/* Pozycjonowanie ramki */
 .custom.topCenter {
-    top: 20px;
-    left: 50%;
-    transform: translate(-50%, 0);
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
-.custom.topRight {
-    top: 20px;
-    right: 20px;
-}
-
-.custom.middleLeft {
-    top: 50%;
-    transform: translate(0, -50%);
-    left: 20px;
-}
-
-.custom.middleCenter {
-    top: 50%;
-    transform: translate(-50%, -50%);
-    left: 50%;
-}
-
-.custom.middleRight {
-    top: 50%;
-    transform: translate(0, -50%);
-    right: 20px;
-}
-
-.custom.bottomLeft {
-    bottom: 20px;
-    left: 20px;
-}
-
-.custom.bottomCenter {
-    bottom: 20px;
-    left: 50%;
-    transform: translate(-50%, 0);
-}
-
-.custom.bottomRight {
-    bottom: 20px;
-    right: 20px;
+/* Ukrywanie informacji o credits */
+.custom .credits {
+  opacity: 0;
+  height: 0;
 }
