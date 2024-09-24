@@ -12,6 +12,8 @@
   box-shadow: 0 0 15px rgba(0, 191, 255, 0.8); /* Błyszczący niebieski efekt */
   border-radius: 10px;
   opacity: 0; /* Aby ramka była widoczna */
+  margin: 0; /* Usunięcie odstępów */
+  padding-left: 0; /* Usuń padding po lewej stronie */
 }
 .custom.finished,
 .custom.active {
