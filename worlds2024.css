@@ -48,9 +48,10 @@
 }
 
 .custom .options li {
-  position: relative;
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
   background: #11204e; /* Niebieskie tło */
-  padding: 12px 30px 12px 40px; /* Increased padding on the left */
+  padding: 12px;
   color: #fff; /* White text */
   margin-bottom: 10px;
   border-radius: 8px;
@@ -94,11 +95,8 @@
   background: #00bfff;
   color: #000; /* Black text for better contrast */
   border-radius: 50%;
-  position: absolute;
-  top: 8px;
-  left: 12px;
+  margin-left: auto; /* Push number to the right */
   font-weight: bold;
-  z-index: 0; /* Ensure the number is behind the text */
 }
 
 /* Pozycjonowanie ramki */
