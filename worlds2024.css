@@ -5,20 +5,13 @@
 .custom {
   background: linear-gradient(135deg, #0b0c34, #1a1e60); /* ciemny niebieski gradient */
   border: 3px solid #00bfff; /* niebieskie obramowanie */
-  width: 100%; /* Ustaw szerokość na pełną */
-  max-width: 420px; /* Maksymalna szerokość */
+  width: 420px;
   padding: 15px;
   font-family: 'Abel', sans-serif;
   color: #fff; /* Biały tekst */
   box-shadow: 0 0 15px rgba(0, 191, 255, 0.8); /* Błyszczący niebieski efekt */
   border-radius: 10px;
-  opacity: 0; /* Aby ramka była widoczna */
-  margin: 0; /* Usuń marginesy */
-  box-sizing: border-box; /* Padding i border liczone wewnątrz szerokości */
-}
-.custom.finished,
-.custom.active {
-	opacity: 1;
+  opacity: 1; /* Aby ramka była widoczna */
 }
 
 /* Informacje meta */
@@ -28,9 +21,6 @@
   border-radius: 10px;
   margin-bottom: 10px;
   color: #fff;
-  opacity: 0;
-  height: 0;
-  box-sizing: border-box;
 }
 
 /* Sekcja total i czas */
@@ -43,7 +33,6 @@
   padding: 10px;
   margin: 10px 1% 10px 0;
   border-radius: 5px;
-  box-sizing: border-box;
 }
 
 .custom .total strong, .custom .duration strong {
@@ -64,7 +53,10 @@
   box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
   font-size: 16px;
   transition: background 0.3s;
-  box-sizing: border-box;
+}
+
+.custom .options li:hover {
+  background: #1e326b; /* Zmiana koloru po najechaniu */
 }
 
 /* Wskaźnik głosów */
@@ -100,6 +92,13 @@
   top: 8px;
   left: 12px;
   font-weight: bold;
+}
+
+/* Pozycjonowanie ramki */
+.custom.topCenter {
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 /* Ukrywanie informacji o credits */
