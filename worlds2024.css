@@ -194,3 +194,7 @@
     bottom: 20px;
     right: 20px;
 }
+.custom .credits {
+  opacity: 0;
+  height: 0;
+}
